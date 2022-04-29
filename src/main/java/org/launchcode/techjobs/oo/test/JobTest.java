@@ -12,6 +12,8 @@ import org.launchcode.techjobs.oo.*;
 @RunWith(JUnit4.class)
 public class JobTest {
 
+
+
     @Test
     public void testSettingJobId() {
         Job job1 = new Job();
@@ -56,13 +58,13 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals("\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", job.toString());
+        assertEquals("\nID: 4\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", job.toString());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
         Job job = new Job("", new Employer(""), new Location(), new PositionType(), new CoreCompetency());
-        assertEquals("\nID: 1\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n", job.toString());
+        assertEquals("\nID: 3\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n", job.toString());
     }
 
 }
