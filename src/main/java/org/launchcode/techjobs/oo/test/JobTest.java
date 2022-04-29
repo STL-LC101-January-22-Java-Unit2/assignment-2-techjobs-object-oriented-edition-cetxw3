@@ -49,4 +49,19 @@ public class JobTest {
         assertFalse(job1.equals(job2));
     }
 
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+
+    }
+
 }

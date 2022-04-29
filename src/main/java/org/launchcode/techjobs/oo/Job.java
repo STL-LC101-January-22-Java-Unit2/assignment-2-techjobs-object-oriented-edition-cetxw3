@@ -1,6 +1,9 @@
 package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Job {
 
@@ -31,12 +34,32 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+
+    @Override
+    public String toString() {
+
+        HashMap<String, String> printJobs = new HashMap<>();
+        printJobs.put("Name: ", name);
+        printJobs.put("Employer: ", employer.getValue());
+        printJobs.put("Location: ", location.getValue());
+        printJobs.put("Position Type: ", positionType.getValue());
+        printJobs.put("Core Competency: ", coreCompetency.getValue());
+
+        for (Map.Entry<String, String> job : printJobs.entrySet()) {
+            if (job.getValue() == null || job.getValue() == "") {
+                printJobs.merge(job.getKey(), "Data not available", String::concat);
+            }
+        }
+
+        return "\nID: " + id + "\nName: " + printJobs.get("Name: ") + "\nEmployer: " + printJobs.get("Employer: ") + "\nLocation: " + printJobs.get("Location: ") + "\nPosition Type: " + printJobs.get("Position Type: ") + "\nCore Competency: " + printJobs.get("Core Competency: ") + "\n";
+
+//        return "\nID: " + id + "\nName: " + name + "\nEmployer: " + employer.getValue() + "\nLocation: " + location.getValue() + "\nPosition Type: " + positionType.getValue() + "\nCore Competency: " + coreCompetency.getValue() + "\n";
+
+    }
+
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-
 
     @Override
     public boolean equals(Object o) {
@@ -50,6 +73,9 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+    //  and id.
 
     public int getId() {
         return id;
