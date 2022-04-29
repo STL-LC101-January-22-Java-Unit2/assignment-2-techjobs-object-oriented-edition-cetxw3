@@ -50,11 +50,7 @@ public class Job {
                 printJobs.merge(job.getKey(), "Data not available", String::concat);
             }
         }
-
         return "\nID: " + id + "\nName: " + printJobs.get("Name: ") + "\nEmployer: " + printJobs.get("Employer: ") + "\nLocation: " + printJobs.get("Location: ") + "\nPosition Type: " + printJobs.get("Position Type: ") + "\nCore Competency: " + printJobs.get("Core Competency: ") + "\n";
-
-//        return "\nID: " + id + "\nName: " + name + "\nEmployer: " + employer.getValue() + "\nLocation: " + location.getValue() + "\nPosition Type: " + positionType.getValue() + "\nCore Competency: " + coreCompetency.getValue() + "\n";
-
     }
 
 
