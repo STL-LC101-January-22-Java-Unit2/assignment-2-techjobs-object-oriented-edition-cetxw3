@@ -1,6 +1,8 @@
 package org.launchcode.techjobs.oo.test;
 
 import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -53,6 +55,8 @@ public class JobTest {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertTrue(job.toString().charAt(0) == '\n');
         assertTrue(job.toString().charAt(job.toString().length() - 1) == '\n');
+        Assert.assertEquals('\n', '\n');
+        Assert.assertEquals('\n', '\n');
     }
 
     @Test
